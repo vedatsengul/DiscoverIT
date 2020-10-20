@@ -1,0 +1,12 @@
+C:\Users\vedat\source\repos\DiscoverIT\Quote.Business\bin\Debug\netcoreapp3.1\Quote.Business.deps.json
+C:\Users\vedat\source\repos\DiscoverIT\Quote.Business\bin\Debug\netcoreapp3.1\Quote.Business.dll
+C:\Users\vedat\source\repos\DiscoverIT\Quote.Business\bin\Debug\netcoreapp3.1\Quote.Business.pdb
+C:\Users\vedat\source\repos\DiscoverIT\Quote.Business\obj\Debug\netcoreapp3.1\Quote.Business.csprojAssemblyReference.cache
+C:\Users\vedat\source\repos\DiscoverIT\Quote.Business\obj\Debug\netcoreapp3.1\Quote.Business.AssemblyInfoInputs.cache
+C:\Users\vedat\source\repos\DiscoverIT\Quote.Business\obj\Debug\netcoreapp3.1\Quote.Business.AssemblyInfo.cs
+C:\Users\vedat\source\repos\DiscoverIT\Quote.Business\obj\Debug\netcoreapp3.1\Quote.Business.dll
+C:\Users\vedat\source\repos\DiscoverIT\Quote.Business\obj\Debug\netcoreapp3.1\Quote.Business.pdb
+C:\Users\vedat\source\repos\DiscoverIT\Quote.Business\bin\Debug\netcoreapp3.1\Quote.Business.runtimeconfig.json
+C:\Users\vedat\source\repos\DiscoverIT\Quote.Business\bin\Debug\netcoreapp3.1\Quote.Business.runtimeconfig.dev.json
+C:\Users\vedat\source\repos\DiscoverIT\Quote.Business\obj\Debug\netcoreapp3.1\Quote.Business.genruntimeconfig.cache
+C:\Users\vedat\source\repos\DiscoverIT\Quote.Business\obj\Debug\netcoreapp3.1\Quote.Business.csproj.CoreCompileInputs.cache

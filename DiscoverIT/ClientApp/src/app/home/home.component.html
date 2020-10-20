@@ -1,0 +1,73 @@
+<h1>Mortgage Approval Application</h1>
+<p>Please fill out the form below to get quote</p>
+
+<form class="form-group" [formGroup]="mortgageForm">
+  <div class="form-group row">
+    <span class="text-danger" *ngIf="mortgageForm.controls['valueOfHome'].hasError('min') && (mortgageForm.controls['valueOfHome'].dirty || mortgageForm.controls['valueOfHome'].touched)">Value of home should be greater than 0</span>
+    <span class="text-danger" *ngIf="mortgageForm.controls['valueOfHome'].hasError('max') && (mortgageForm.controls['valueOfHome'].dirty || mortgageForm.controls['valueOfHome'].touched)">Value of home should be less than £500000</span>
+    <span class="text-danger" *ngIf="mortgageForm.controls['loanAmount'].hasError('min')">Loan amount should be greater than %60 of value of home</span>
+    <span class="text-danger" *ngIf="mortgageForm.controls['loanAmount'].hasError('max')">Loan amount should be less than %80 of value of home</span>
+    <span class="text-danger" *ngIf="mortgageForm.controls['termOfLoan'].hasError('min') && (mortgageForm.controls['termOfLoan'].dirty || mortgageForm.controls['termOfLoan'].touched)">Term of loan should be greater than 10</span>
+    <span class="text-danger" *ngIf="mortgageForm.controls['termOfLoan'].hasError('max') && (mortgageForm.controls['termOfLoan'].dirty || mortgageForm.controls['termOfLoan'].touched)">Term of loan should be less than 25</span>
+    {{message}}
+  </div>
+  <div class="form-group row">
+    <label class="col-md-2 col-form-label">Value of Home</label>
+    <div class="col-md-3">
+      <input class="form-control" type="number" formControlName="valueOfHome" placeholder="Please enter the value of home" />
+      <span class="text-danger" *ngIf="mortgageForm.controls['valueOfHome'].hasError('required') && (mortgageForm.controls['valueOfHome'].dirty || mortgageForm.controls['valueOfHome'].touched)">This field is required</span>
+      <span class="text-danger" *ngIf="mortgageForm.controls['valueOfHome'].hasError('min') && (mortgageForm.controls['valueOfHome'].dirty || mortgageForm.controls['valueOfHome'].touched)">*</span>
+      <span class="text-danger" *ngIf="mortgageForm.controls['valueOfHome'].hasError('max') && (mortgageForm.controls['valueOfHome'].dirty || mortgageForm.controls['valueOfHome'].touched)">*</span>
+
+    </div>
+  </div>
+  <div class="form-group row">
+    <label class="col-md-2 col-form-label">Loan Amount</label>
+    <div class="col-md-3">
+      <input class="form-control" type="number" formControlName="loanAmount" placeholder="Please enter the loan amount" />
+      <span class="text-danger" *ngIf="mortgageForm.controls['loanAmount'].hasError('required') && (mortgageForm.controls['loanAmount'].dirty || mortgageForm.controls['loanAmount'].touched)">This field is required</span>
+      <span class="text-danger" *ngIf="mortgageForm.controls['loanAmount'].hasError('min')">*</span>
+      <span class="text-danger" *ngIf="mortgageForm.controls['loanAmount'].hasError('max')">*</span>
+    </div>
+  </div>
+  <div class="form-group row">
+    <label class="col-md-2 col-form-label">Term of Loan</label>
+    <div class="col-md-3">
+      <input class="form-control" type="number" formControlName="termOfLoan" placeholder="Please enter the term of loan" />
+      <span class="text-danger" *ngIf="mortgageForm.controls['termOfLoan'].hasError('required') && (mortgageForm.controls['termOfLoan'].dirty || mortgageForm.controls['termOfLoan'].touched)">This field is required</span>
+      <span class="text-danger" *ngIf="mortgageForm.controls['termOfLoan'].hasError('min') && (mortgageForm.controls['termOfLoan'].dirty || mortgageForm.controls['termOfLoan'].touched)">*</span>
+      <span class="text-danger" *ngIf="mortgageForm.controls['termOfLoan'].hasError('max') && (mortgageForm.controls['termOfLoan'].dirty || mortgageForm.controls['termOfLoan'].touched)">*</span>
+    </div>
+  </div>
+  <div class="form-group row">
+    <label class="col-md-2 col-form-label">Interest on Loan</label>
+    <div class="col-md-3">
+      <select class="form-control" formControlName="interest">
+        <option [ngValue]="1.5" selected>%1.5</option>
+        <option [ngValue]="3.5">%3.5</option>
+        <option [ngValue]="6">%6</option>
+      </select>
+    </div>
+  </div>
+  <div class="form-group row">
+    <label class="col-md-2 col-form-label">Monthly Repayment</label>
+    <div class="col-md-3">
+      <input class="form-control" type="number" readonly formControlName="repayment" />
+    </div>
+  </div>
+</form>
+<div class="form-group row">
+
+  <div style="padding-left:15px">
+    <button [disabled]="mortgageForm.invalid" (click)="calculate()">
+      <span class="btn-label">
+      </span>Calculate
+    </button>
+  </div>
+  <div style="padding-left:15px">
+    <button [disabled]="!isRepaymentCalculated" (click)="submitForApproval()">
+      <span class="btn-label">
+      </span>Submit for Approval
+    </button>
+  </div>
+</div>
